@@ -1,24 +1,18 @@
 #include<stdio.h>
-struct threeInteger
+int main()
 {
-    int First;
-    int Second;
-    int Third;
-};
-int main ()
-{
-    int i, j, TestCase, Fermers, Result;
-    scanf("%d", &TestCase);
-    for(i=1, Result=0; i<=TestCase; i++, Result=0)
+    long long int i, j, testCase, totalFarmer, x, y, z, amount;
+    scanf("%lld", &testCase);
+    for(i=1; i<=testCase; i++)
     {
-        scanf("%d", &Fermers);
-        struct threeInteger Object[Fermers];
-        for(j=0; j<Fermers; j++)
-            scanf("%d%d%d", &Object[j].First, &Object[j].Second, &Object[j].Third);
-        for(j=0; j<Fermers; j++)
-            Result=Result+Object[j].First*Object[j].Third;
-        printf("%d\n", Result);
+        amount=0;
+        scanf("%lld", &totalFarmer);
+        for(j=1; j<=totalFarmer; j++)
+        {
+            scanf("%lld%lld%lld", &x, &y, &z);
+            amount += x*z;
+        }
+        printf("%lld\n", amount);
     }
-
     return 0;
 }
